@@ -8,8 +8,6 @@ $url = "https://api.coingecko.com/api/v3/simple/price?ids={$coins}&vs_currencies
 $json = file_get_contents($url);
 $data = json_decode($json);
 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -20,11 +18,28 @@ $data = json_decode($json);
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Latest Cryptocurrency Prices</h1>
-    <table>
+<h1>Latest Cryptocurrency Prices</h1>
+<table>
+    <thead>
+    <tr>
         <th>COIN</th>
         <th>Price(USD)</th>
-    </table>
+    </tr>
+    </thead>
+    <?php
+    if ($data == null) {
+        echo "Could not retrieve crypto data";
+    } else {
+        foreach ($data as $coin => $price) {
+            echo "<tr>";
+            echo "<td> {$coin} </td>";
+            echo "<td> {$price} </td>";
+        }
+
+    }
+    ?>
+
+</table>
 </body>
 
 </html>
