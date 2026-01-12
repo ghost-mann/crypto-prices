@@ -1,4 +1,15 @@
 <?php
+
+$api_key = "CG-HTva4gAZt2xJMhZT6iNqpB6C";
+
+$coins = 'bitcoin,ethereum,solana,dogecoin,monero';
+$vs_currency = 'usd';
+
+$url = "https://api.coingecko.com/api/v3/simple/price?ids={$coins}&vs_currencies={$vs_currency}&include_24hr_change=true&x_cg_demo_api_key={$api_key}";
+
+$json = file_get_contents($url);
+$data = json_decode($json);
+
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +26,8 @@
         <table>
             <tr>
                 <th>COIN</th>
-                <th></th>
+                <th>PRICE(USD)</th>
+                <th>24H CHANGE</th>
             </tr>
         </table>
     </div>
