@@ -1,6 +1,6 @@
 <?php
 
-$api_key = "CG-HTva4gAZt2xJMhZT6iNqpB6C";
+$api_key = "your_api_key";
 
 $coins = 'bitcoin,ethereum,solana,dogecoin,monero';
 $vs_currency = 'usd';
