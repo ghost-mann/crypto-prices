@@ -12,6 +12,13 @@
 <body>
     <div class="container">
         <h1>Latest Crypto Prices</h1>
+        <table>
+            <tr>
+                <th>COIN</th>
+                <th></th>
+            </tr>
+        </table>
     </div>
+<footer>Made by ghost-mann.Powered by CoinGecko.</footer>
 </body>
 </html>
