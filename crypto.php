@@ -29,6 +29,15 @@ $data = json_decode($json);
                 <th>PRICE(USD)</th>
                 <th>24H CHANGE</th>
             </tr>
+
+            <?php
+            foreach ($data as $coin => $info) {
+                echo "<tr>";
+                echo "<td>" . $coin ."</td>";
+                echo "<td>" . $info->usd . "</td>";
+                echo "</tr>";
+            }
+            ?>
         </table>
     </div>
 <footer>Made by ghost-mann.Powered by CoinGecko.</footer>
