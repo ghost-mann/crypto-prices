@@ -26,18 +26,21 @@ $data = json_decode($json);
         <th>Price(USD)</th>
     </tr>
     </thead>
+    <tbody>
     <?php
-    if ($data == null) {
+    if ($data === null) {
         echo "Could not retrieve crypto data";
     } else {
-        foreach ($data as $coin => $price) {
+        foreach ($data as $coin => $stuff) {
             echo "<tr>";
-            echo "<td> {$coin} </td>";
-            echo "<td> {$price} </td>";
+            echo "<td> $coin </td>";
+            echo "<td> $stuff->usd </td>";
+            echo "</tr>";
         }
 
     }
     ?>
+    </tbody>
 
 </table>
 </body>
